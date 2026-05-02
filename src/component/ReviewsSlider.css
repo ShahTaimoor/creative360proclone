@@ -170,8 +170,34 @@
 @media (max-width: 1200px) {
   .review-card { flex: 0 0 calc(50% - 13px); }
   .slider-arrow { display: none; }
+  .reviews-slider-container { padding: 40px; }
 }
 
 @media (max-width: 768px) {
-  .review-card { flex: 0 0 100%; }
+  .reviews-section { padding: 80px 20px; }
+  .reviews-slider-container { padding: 30px 20px; border-radius: 30px; }
+  
+  .reviews-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .google-brand { font-size: 24px; }
+  .overall-rating { justify-content: center; }
+  .review-btn { width: 100%; }
+
+  .reviews-slider-track {
+    gap: 0;
+  }
+
+  .review-card { 
+    flex: 0 0 100%; 
+    min-width: 100%;
+    padding: 25px 20px;
+  }
+  
+  .rev-text { font-size: 14px; }
+  .rev-name { font-size: 13px; white-space: nowrap; }
 }

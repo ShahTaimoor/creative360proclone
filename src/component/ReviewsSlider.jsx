@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ReviewsSlider.css";
 
 function ReviewsSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(4);
 
   const reviews = [
     {
@@ -42,12 +43,29 @@ function ReviewsSlider() {
     }
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setCardsToShow(1);
+      } else if (window.innerWidth <= 1200) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(4);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalSlides = Math.max(0, reviews.length - cardsToShow + 1);
+
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % (reviews.length - 3)); // Shows 4 cards at once
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + (reviews.length - 3)) % (reviews.length - 3));
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   return (
@@ -74,7 +92,7 @@ function ReviewsSlider() {
         <div className="reviews-grid-wrapper">
           <div 
             className="reviews-slider-track" 
-            style={{ transform: `translateX(-${currentIndex * (100 / 4)}%)` }}
+            style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
           >
             {reviews.map((rev, i) => (
               <div key={i} className="review-card glass">
@@ -99,11 +117,11 @@ function ReviewsSlider() {
         </div>
         
         <div className="slider-dots">
-          {[0, 1].map((dot) => ( // Simplified dots for the demo
+          {Array.from({ length: totalSlides }).map((_, i) => (
             <span 
-              key={dot} 
-              className={`dot ${currentIndex === dot ? "active" : ""}`}
-              onClick={() => setCurrentIndex(dot)}
+              key={i} 
+              className={`dot ${currentIndex === i ? "active" : ""}`}
+              onClick={() => setCurrentIndex(i)}
             ></span>
           ))}
         </div>

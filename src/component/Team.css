@@ -137,17 +137,20 @@
   }
   
   .service-card {
-    min-width: 260px;
-    font-size: 16px;
-    padding: 20px 30px;
+    min-width: 100%;
+    width: 100%;
+    font-size: 15px;
+    padding: 18px 25px;
+    border-radius: 15px;
+    text-align: center;
   }
   
   .card-offset-0, .card-offset-1 {
-    margin: 0 auto;
+    margin: 0;
     align-self: center;
   }
   
   .team-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 }

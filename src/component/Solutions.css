@@ -130,6 +130,10 @@
   }
   
   .solutions-title {
-    font-size: 36px;
+    font-size: 32px;
+  }
+
+  .solutions-main-desc {
+    font-size: 16px;
   }
 }

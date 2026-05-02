@@ -186,12 +186,23 @@
   
   .hero-title {
     font-size: 44px;
+    margin-bottom: 30px;
   }
   
   .hero-subtitle {
     font-size: 28px;
+    margin-bottom: 5px;
   }
   
+  .hero-trust-box {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .trust-content {
+    justify-content: center;
+  }
+
   .hero-badges {
     flex-wrap: wrap;
     justify-content: center;
@@ -199,25 +210,40 @@
   }
   
   .hero-badges-wrapper {
-    padding: 30px;
-    border-radius: 40px;
+    padding: 25px;
+    border-radius: 30px;
+    width: 100%;
   }
   
   .badge-divider {
     display: none;
   }
+  
+  .hero-badge {
+    height: 40px;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 34px;
+    font-size: 32px;
+    line-height: 1.1;
   }
   
   .hero-subtitle {
-    font-size: 24px;
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .hero-cta {
+    font-size: 14px;
   }
   
   .hero-badge {
-    height: 35px;
+    height: 32px;
   }
 }
