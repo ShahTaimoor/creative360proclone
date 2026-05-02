@@ -1,0 +1,135 @@
+.solutions-section {
+  padding: 120px 50px;
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.solutions-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.solutions-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.solutions-main-desc {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.solutions-sub-desc {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.8;
+}
+
+/* Cards Grid */
+.solutions-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.solution-card {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.card-bubble {
+  padding: 40px 30px;
+  border-radius: 40px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card-bubble:hover {
+  transform: translateY(-5px);
+}
+
+.solution-card.coral .card-bubble {
+  background: #ff6b6b;
+}
+
+.solution-card.purple .card-bubble {
+  background: #9078b1;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bubble Tail */
+.bubble-tail {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: -15px;
+  background: inherit;
+  border-radius: 4px;
+}
+
+.solution-card:nth-child(1) .bubble-tail { left: 40px; transform: rotate(45deg); }
+.solution-card:nth-child(2) .bubble-tail { right: 40px; transform: rotate(45deg); }
+.solution-card:nth-child(3) .bubble-tail { left: 40px; transform: rotate(45deg); }
+.solution-card:nth-child(4) .bubble-tail { right: 40px; transform: rotate(45deg); }
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .solutions-left {
+    text-align: center;
+  }
+  
+  .solutions-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-section {
+    padding: 80px 20px;
+  }
+  
+  .solutions-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-bubble {
+    padding: 30px;
+    border-radius: 30px;
+  }
+  
+  .solutions-title {
+    font-size: 36px;
+  }
+}

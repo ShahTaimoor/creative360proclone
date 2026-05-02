@@ -1,0 +1,168 @@
+.contact-section {
+  padding: 120px 50px;
+  background: var(--bg-dark);
+}
+
+.contact-top-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.guarantee-badge {
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-size: 14px;
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+.contact-btns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.strategy-btn {
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.call-now-btn {
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trust-signals {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Main Grid */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.lets-talk {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 0.9;
+  color: white;
+}
+
+.talk-accent {
+  color: var(--primary-purple);
+  opacity: 0.6;
+}
+
+/* Form Card */
+.consultation-form-card {
+  padding: 50px;
+  border-radius: 40px;
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-gray);
+  margin-left: 10px;
+}
+
+.form-group input, .form-group select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  outline: none;
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #111;
+  color: white;
+  padding: 10px;
+}
+
+.form-group input:focus {
+  border-color: var(--primary-purple);
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 18px;
+  background: var(--primary-purple);
+  color: white;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--secondary-purple);
+  transform: translateY(-2px);
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .contact-main-grid { grid-template-columns: 1fr; gap: 60px; }
+  .lets-talk { font-size: 80px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .contact-section { padding: 80px 20px; }
+  .trust-signals { flex-direction: column; align-items: center; gap: 20px; }
+  .consultation-form-card { padding: 30px 20px; }
+  .lets-talk { font-size: 60px; }
+}

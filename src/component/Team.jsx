@@ -3,56 +3,53 @@ import "./Team.css";
 
 function Team() {
   const services = [
-    "Revenue-First Mapping",
-    "Surgical Market Entry",
-    "Radical Transparency",
-    "Competitive Counter-Intelligence",
-    "High-Velocity Execution"
+    { name: "Revenue-First Mapping", color: "purple" },
+    { name: "Surgical Market Entry", color: "coral" },
+    { name: "Radical Transparency", color: "purple" },
+    { name: "Competitive Counter-Intelligence", color: "coral" },
+    { name: "High-Velocity Execution", color: "purple" }
   ];
 
   return (
-    <section className="team-section">
+    <section className="team-section" id="about">
       <div className="team-container">
-        {/* Left Column - Stacked Boxes */}
-        <div className="team-left">
-          <div className="services-stack">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`service-box ${index % 2 === 0 ? 'purple' : 'coral'}`}
-              >
-                <span>{service}</span>
+        <div className="team-grid">
+          <div className="team-left">
+            <div className="services-stack animate-fade-in">
+              {services.map((service, index) => (
+                <div 
+                  key={index} 
+                  className={`service-card ${service.color} card-offset-${index % 2}`}
+                >
+                  <span className="service-name">{service.name}</span>
+                </div>
+              ))}
+              <div className="zigzag-line"></div>
+            </div>
+          </div>
+
+          <div className="team-right animate-fade-in">
+            <div className="story-badge-wrapper">
+              <div className="story-badge glass">
+                <span className="badge-dot"></span>
+                <span>Our Story</span>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+            
+            <h2 className="team-title">
+              The Team Behind <br />
+              <span className="gradient-text">the Results</span>
+            </h2>
+            
+            <div className="team-description-wrapper">
+              <p className="team-text">
+                With a powerhouse team of over 50 specialists based in the United States, we provide cutting-edge digital marketing strategies to a diverse portfolio of 400+ American businesses. As the top-rated SEO agency on Google, we maintain a stellar 5-star rating backed by more than 450 verified client reviews.
+              </p>
 
-        {/* Right Column - Content */}
-        <div className="team-right">
-          <div className="story-badge">
-            <span className="badge-icon">⬛</span>
-            <span>Our Story</span>
-          </div>
-          
-          <h2 className="team-title">The Team Behind the Results</h2>
-          
-          <div className="team-content">
-            <p>
-              With a powerhouse team of over 50 specialists based in the
-              United States, we provide cutting-edge digital marketing
-              strategies to a diverse portfolio of 400+ American businesses.
-              As the top-rated SEO agency on Google, we maintain a stellar
-              5-star rating backed by more than 450 verified client reviews.
-            </p>
-
-            <p>
-              Statistics are great, but what actually matters is your ROI. Our
-              mission is straightforward: we amplify your online visibility to
-              directly increase your revenue. We don't just promise results;
-              we deliver them. By navigating the most competitive search
-              landscapes in the country, we've generated millions in additional
-              profit for our partners, moving them from page ten to the #1 spot.
-            </p>
+              <p className="team-text">
+                Statistics are great, but what actually matters is your ROI. Our mission is straightforward: we amplify your online visibility to directly increase your revenue. We don't just promise results; we deliver them.
+              </p>
+            </div>
           </div>
         </div>
       </div>
