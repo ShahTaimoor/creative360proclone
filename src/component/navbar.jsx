@@ -17,6 +17,17 @@ function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    // Prevent scrolling when menu is open
+    if (!isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
   };
 
   const menuItems = [
@@ -33,9 +44,9 @@ function Navbar() {
       ]
     },
     { name: "PROJECTS", path: "#projects" },
-    { name: "REVIEWS", path: "#reviews" },
     { name: "BLOG", path: "#blog" },
     { name: "CONTACT", path: "#contact" },
+    { name: "REVIEWS", path: "#reviews" },
   ];
 
   return (
@@ -76,6 +87,11 @@ function Navbar() {
               ))}
             </ul>
           </div>
+          
+          <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
         <div className="navbar-right">
@@ -83,37 +99,42 @@ function Navbar() {
             (973) 563-1729 <span className="arrow-icon">↗</span>
           </button>
           
-          <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <button className="call-us-now-mobile gradient-btn" onClick={() => window.location.href = "tel:9735631729"}>
+            CALL US NOW <span className="arrow-icon">↗</span>
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <ul>
+        <div className="mobile-menu-header">
+          <img src={logo} alt="Logo" className="mobile-logo" />
+          <button className="close-btn" onClick={closeMenu}>
+            <span className="close-icon">✕</span>
+          </button>
+        </div>
+        
+        <ul className="mobile-links">
           {menuItems.map((item) => (
-            <li key={item.name}>
+            <li key={item.name} className={activeMenu === item.name ? "active-pill" : ""}>
               <a
                 href={item.path}
-                className={activeMenu === item.name ? "active" : ""}
                 onClick={() => {
                   setActiveMenu(item.name);
-                  setIsOpen(false);
+                  closeMenu();
                 }}
               >
                 {item.name}
               </a>
             </li>
           ))}
-          <li>
-            <button className="phone-button-mobile">
-              (973) 563-1729 ↗
-            </button>
-          </li>
         </ul>
+
+        <div className="mobile-menu-footer">
+          <button className="mobile-phone-btn glass" onClick={() => window.location.href = "tel:9735631729"}>
+            (973) 563-1729
+          </button>
+        </div>
       </div>
     </nav>
   );

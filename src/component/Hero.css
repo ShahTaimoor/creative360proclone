@@ -61,7 +61,7 @@
   color: #e2e8f0;
 }
 
-/* Trust Box */
+/* Trust Box Desktop */
 .hero-trust-box {
   width: fit-content;
   padding: 20px 30px;
@@ -111,18 +111,25 @@
 
 .hero-cta {
   width: 100%;
-  padding: 20px;
+  padding: 22px;
   border-radius: 100px;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
+  background: linear-gradient(90deg, #8b5cf6, #ea7a2e);
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
 }
 
 .arrow {
   font-size: 20px;
 }
+
+/* Mobile Trust Box */
+.mobile-only { display: none; }
+.desktop-only { display: block; }
 
 /* Badges wrapper */
 .hero-badges-wrapper {
@@ -145,105 +152,87 @@
   transition: opacity 0.3s ease;
 }
 
-.hero-badge:hover {
-  opacity: 1;
-}
-
-.badge-divider {
-  width: 1px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.1);
-}
+.hero-badge:hover { opacity: 1; }
+.badge-divider { width: 1px; height: 30px; background: rgba(255, 255, 255, 0.1); }
 
 /* Responsiveness */
 @media (max-width: 1200px) {
-  .hero-title {
-    font-size: 60px;
-  }
-  
-  .hero-subtitle {
-    font-size: 36px;
-  }
-  
-  .hero-main {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .hero-right {
-    padding-bottom: 0;
-  }
-  
-  .hero-desc-container {
-    max-width: 100%;
-  }
+  .hero-title { font-size: 60px; }
+  .hero-subtitle { font-size: 36px; }
+  .hero-main { grid-template-columns: 1fr; gap: 40px; }
+  .hero-right { padding-bottom: 0; }
+  .hero-desc-container { max-width: 100%; }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 120px 20px 60px;
-  }
+  .hero { padding: 100px 20px 40px; }
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+  
+  .hero-main { margin-bottom: 40px; text-align: center; }
   
   .hero-title {
-    font-size: 44px;
+    font-size: 36px;
     margin-bottom: 30px;
-  }
-  
-  .hero-subtitle {
-    font-size: 28px;
-    margin-bottom: 5px;
-  }
-  
-  .hero-trust-box {
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .trust-content {
-    justify-content: center;
-  }
-
-  .hero-badges {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .hero-badges-wrapper {
-    padding: 25px;
-    border-radius: 30px;
-    width: 100%;
-  }
-  
-  .badge-divider {
-    display: none;
-  }
-  
-  .hero-badge {
-    height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 32px;
     line-height: 1.1;
   }
   
   .hero-subtitle {
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .hero-description {
-    font-size: 15px;
-    text-align: center;
-  }
-  
-  .hero-cta {
     font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
   }
-  
-  .hero-badge {
-    height: 32px;
+
+  .hero-cta {
+    padding: 18px;
+    font-size: 15px;
+    border-radius: 100px;
   }
+
+  /* Mobile Trust Card */
+  .hero-trust-mobile {
+    width: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  .trust-heading-mobile {
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .trust-content-mobile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .trust-info-mobile .stars {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .trust-info-mobile p {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 30px; }
+  .hero-subtitle { font-size: 20px; }
 }
